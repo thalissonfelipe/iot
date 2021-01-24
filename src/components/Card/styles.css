@@ -1,0 +1,72 @@
+.card, .card-content {
+    flex-direction: column;
+}
+
+.card {
+    margin-top: 2rem;
+    background-color: var(--white);
+    padding-top: 2rem;
+}
+
+.card-content {
+    padding: 0 2rem;
+}
+
+.card-content h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+.card:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.sensor-values {
+    margin-top: 1rem;
+}
+
+.sensor-value:first-child {
+    margin-right: 2srem;
+}
+
+.sensor-value img {
+    width: 1.7rem;
+    height: 1.4rem;
+}
+
+.sensor-value span {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.card-footer {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    margin-top: 2rem;
+    padding: 2rem 0;
+}
+
+.card-footer span {
+    font-size: .7rem;
+}
+
+.card-footer h3 {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.bg-low {
+    background-color: var(--lightgreen);
+}
+
+.bg-medium {
+    background-color: var(--yellow);
+}
+
+.bg-high {
+    background-color: var(--red);
+}

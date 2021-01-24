@@ -1,0 +1,21 @@
+.dashboard {
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.dashboard h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+.cards {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 780px) {
+    .cards {
+        flex-direction: column;
+    }
+}
