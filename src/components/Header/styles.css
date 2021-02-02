@@ -8,8 +8,7 @@
 
 .header img {
     flex-shrink: 0;
-    width: 12rem;
-    height: 3.5rem;
+    width: 14rem;
 }
 
 .header::after {

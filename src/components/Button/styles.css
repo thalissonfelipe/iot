@@ -1,7 +1,8 @@
 .btn {
-    padding: .2rem 6rem;
+    padding: .24rem 6rem;
     font-size: 1.2rem;
     background-color: var(--green);
+    height: 2.4rem;
     color: var(--white);
     outline: none;
     border: none;
@@ -16,6 +17,6 @@
 
 .btn-outline {
     background-color: transparent;
-    border: 1px solid var(--outline);
-    color: var(--outline);
+    border: 1px solid var(--orange);
+    color: var(--orange);
 }

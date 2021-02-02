@@ -21,12 +21,35 @@ export default function Card({ name, type, values, priority, outline }) {
                 <Button type={type} outline={outline} />
                 <div className="sensor-values d-flex">
                     <div className="sensor-value d-flex">
-                        <img src={tempIcon} alt='Temperature' />
+                        <img src={tempIcon} alt='Temperature' id="card-icon-temp"/>
                         <span>{values[0]}ºC</span>
                     </div>
                     <div className="sensor-value d-flex">
-                        <img src={humIcon} alt='Humidity' />
+                        <img src={humIcon} alt='Humidity' id="card-icon-hum"/>
                         <span>{values[1]}%</span>
+                    </div>
+                </div>
+                <div className="slot-details">
+                    <div class="slot-container">
+                        <svg class="slot-tag" width="22" height="22">
+                            <circle cx="11" cy="11" r="10" stroke="black" stroke-width="1" fill="none"/>
+                            <text x="50%" y="50%" font-size="1rem" font-weight="700" text-anchor="middle" fill="black" dy=".3em">A</text>
+                        </svg>
+                        <span class="slot-qtd">20g</span><text class="slot-text"> de </text><span class="slot-ing">Alface</span>
+                    </div>
+                    <div class="slot-container">
+                        <svg class="slot-tag" width="22" height="22">
+                            <circle cx="11" cy="11" r="10" stroke="black" stroke-width="1" fill="none"/>
+                            <text x="50%" y="50%" font-size="1rem" font-weight="700" text-anchor="middle" fill="black" dy=".3em">B</text>
+                        </svg>
+                        <span class="slot-qtd">50g</span><text class="slot-text"> de </text><span class="slot-ing">Brocolis</span>
+                    </div>
+                    <div class="slot-container">
+                        <svg class="slot-tag" width="22" height="22">
+                            <circle cx="11" cy="11" r="10" stroke="black" stroke-width="1" fill="none"/>
+                            <text x="50%" y="50%" font-size="1rem" font-weight="700" text-anchor="middle" fill="black" dy=".3em">C</text>
+                        </svg>
+                        <span class="slot-qtd">80g</span><text class="slot-text"> de </text><span class="slot-ing">Coentro</span>
                     </div>
                 </div>
             </div>

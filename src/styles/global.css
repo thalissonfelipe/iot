@@ -8,11 +8,15 @@
     --white: #FFF;
     --black: #192428;
     --gray: #484c4f;
-    --orange: #f86433;
-    --green: #28b03c;
-    --lightgreen: #77fe61;
-    --red: #f82e3b;
-    --yellow: #fbbe48;
+    --blue: #3FB1F2;
+    --orange: #FF7017;
+    --green: #1FB025;
+    --green-text: #006304;
+    --lightgreen: #81FF45;
+    --red-text: #630000e0;
+    --red: #F83333;
+    --yellow-text: #823f00e0;
+    --yellow: #FFC226;
     --outline: #c8939c;
     --bg: #f7f5f8;
 }

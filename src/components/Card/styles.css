@@ -5,7 +5,23 @@
 .card {
     margin-top: 2rem;
     background-color: var(--white);
+    height: 100%;
     padding-top: 2rem;
+    border-radius: .4rem;
+    box-shadow: 0 .2rem .2rem rgba(41, 41, 41, 0.24);
+    transition: .2s;
+    transition-timing-function: ease-out;
+    transform: scale(1,1);
+}
+
+.card:hover {
+    margin-top: 2rem;
+    background-color: var(--white);
+    border-radius: .4rem;
+    box-shadow: 0 .4rem .8rem rgba(41, 41, 41, 0.24);
+    transition: .2s;
+    transition-timing-function: ease-in;
+    transform: scale(1.05,1.05);
 }
 
 .card-content {
@@ -14,7 +30,7 @@
 
 .card-content h2 {
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--gray);
     margin-bottom: 1rem;
 }
@@ -25,6 +41,10 @@
 
 .sensor-values {
     margin-top: 1rem;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .sensor-value:first-child {
@@ -48,6 +68,7 @@
     height: 3rem;
     margin-top: 2rem;
     padding: 2rem 0;
+    border-radius: 0 0 .4rem .4rem;
 }
 
 .card-footer span {
@@ -61,12 +82,100 @@
 
 .bg-low {
     background-color: var(--lightgreen);
+    color: var(--green-text);
 }
 
 .bg-medium {
     background-color: var(--yellow);
+    color: var(--yellow-text);
 }
 
 .bg-high {
     background-color: var(--red);
+    color: var(--red-text);
+}
+
+#card-icon-hum{
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: .5rem;
+    margin-left: 1rem;
+    padding: .1rem;
+}
+
+#card-icon-temp{
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: .5rem;
+    padding: .1rem;
+}
+
+.slot-details {
+    display: none;
+    transform: scale(0);
+    transition: .2s;
+    transition-timing-function: ease-out;
+    -webkit-animation: fadeout 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 1s; /* Firefox < 16 */
+        -ms-animation: fadeout 1s; /* Internet Explorer */
+         -o-animation: fadeout 1s; /* Opera < 12.1 */
+            animation: fadeout 1s;
+}
+
+
+.card:hover .slot-details{
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+    transform: scale(1);
+    transition: .2s;
+    transition-timing-function: ease-in;
+    display: flex;
+    margin-top: 2rem;
+    width: 80%;
+    flex-direction: column;
+
+}
+
+.slot-container{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slot-tag{
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.slot-text{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.slot-qtd{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.slot-ing{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
