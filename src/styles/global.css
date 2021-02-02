@@ -17,6 +17,9 @@
     --red: #F83333;
     --yellow-text: #823f00e0;
     --yellow: #FFC226;
+    --meat-slot: #F52A36;
+    --veg-slot: var(--green);
+    --fruit-slot: #E02CB9;
     --outline: #c8939c;
     --bg: #f7f5f8;
 }

@@ -3,6 +3,7 @@
 }
 
 .card {
+    align-self: baseline;
     margin-top: 2rem;
     background-color: var(--white);
     height: 100%;
@@ -15,6 +16,7 @@
 }
 
 .card:hover {
+    align-self: baseline;
     margin-top: 2rem;
     background-color: var(--white);
     border-radius: .4rem;

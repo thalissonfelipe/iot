@@ -3,7 +3,13 @@ import React from 'react';
 import './styles.css';
 
 export default function Button({ type, outline }) {
-    const classes = 'btn ' + (outline ? 'btn-outline ' : ' ');
+    const _ing = {
+        'Carnes': 'meat',
+        'Verduras': 'veg',
+        'Frutas': 'fruit'
+    };
+    
+    const classes = 'btn-' + _ing[type] + (outline ? '-outline ' : ' ');
 
     return (
         <button className={classes}>{type}</button>

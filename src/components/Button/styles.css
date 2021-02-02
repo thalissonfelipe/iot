@@ -1,7 +1,7 @@
-.btn {
+.btn-veg {
     padding: .24rem 6rem;
     font-size: 1.2rem;
-    background-color: var(--green);
+    background-color: var(--veg-slot);
     height: 2.4rem;
     color: var(--white);
     outline: none;
@@ -11,12 +11,82 @@
     transition: opacity 0.2s;
 }
 
-.btn:hover {
+.btn-veg:hover {
     opacity: 0.7;
 }
 
-.btn-outline {
+.btn-meat {
+    padding: .24rem 6rem;
+    font-size: 1.2rem;
+    background-color: var(--meat-slot);
+    height: 2.4rem;
+    color: var(--white);
+    outline: none;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-meat:hover {
+    opacity: 0.7;
+}
+
+.btn-fruit {
+    padding: .24rem 6rem;
+    font-size: 1.2rem;
+    background-color: var(--fruit-slot);
+    height: 2.4rem;
+    color: var(--white);
+    outline: none;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-fruit:hover {
+    opacity: 0.7;
+}
+
+.btn-veg-outline {
+    padding: .24rem 6rem;
+    font-size: 1.2rem;
+    height: 2.4rem;
+    outline: none;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
     background-color: transparent;
-    border: 1px solid var(--orange);
-    color: var(--orange);
+    border: 1px solid var(--veg-slot);
+    color: var(--veg-slot);
+}
+
+.btn-meat-outline {
+    padding: .24rem 6rem;
+    font-size: 1.2rem;
+    height: 2.4rem;
+    outline: none;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    background-color: transparent;
+    border: 1px solid var(--meat-slot);
+    color: var(--meat-slot);
+}
+
+.btn-fruit-outline {
+    padding: .24rem 6rem;
+    font-size: 1.2rem;
+    height: 2.4rem;
+    outline: none;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    background-color: transparent;
+    border: 1px solid var(--fruit-slot);
+    color: var(--fruit-slot);
 }
