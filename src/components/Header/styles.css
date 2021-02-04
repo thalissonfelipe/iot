@@ -6,7 +6,7 @@
     background-color: var(--black);
 }
 
-.header img {
+.header a img {
     flex-shrink: 0;
     width: 14rem;
 }

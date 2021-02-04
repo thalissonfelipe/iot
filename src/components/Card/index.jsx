@@ -14,7 +14,6 @@ export default function Card({ name, type, values, priority, outline, contains }
         'high': 'Alta'
     };
 
-
     return (
         <div className="card d-flex">
             <div className="card-content d-flex">
@@ -31,30 +30,30 @@ export default function Card({ name, type, values, priority, outline, contains }
                     </div>
                 </div>
                 <div className="slot-details">
-                    <div class="slot-container">
-                        <svg class="slot-tag" width="22" height="22">
-                            <circle cx="11" cy="11" r="10" stroke="black" stroke-width="1" fill="none"/>
-                            <text x="50%" y="50%" font-size="1rem" font-weight="700" text-anchor="middle" fill="black" dy=".3em">A</text>
+                    <div className="slot-container">
+                        <svg className="slot-tag" width="22" height="22">
+                            <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
+                            <text x="50%" y="50%" fontSize="1rem" fontWeight="700" textAnchor="middle" fill="black" dy=".3em">A</text>
                         </svg>
-                        <span class="slot-qtd">20g</span><text class="slot-text"> de </text><span class="slot-ing">{contains[0]}</span>
+                        <span className="slot-qtd">20g</span><p className="slot-text"> de </p><span className="slot-ing">{contains[0]}</span>
                     </div>
-                    <div class="slot-container">
-                        <svg class="slot-tag" width="22" height="22">
-                            <circle cx="11" cy="11" r="10" stroke="black" stroke-width="1" fill="none"/>
-                            <text x="50%" y="50%" font-size="1rem" font-weight="700" text-anchor="middle" fill="black" dy=".3em">B</text>
+                    <div className="slot-container">
+                        <svg className="slot-tag" width="22" height="22">
+                            <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
+                            <text x="50%" y="50%" fontSize="1rem" fontWeight="700" textAnchor="middle" fill="black" dy=".3em">B</text>
                         </svg>
-                        <span class="slot-qtd">50g</span><text class="slot-text"> de </text><span class="slot-ing">{contains[1]}</span>
+                        <span className="slot-qtd">50g</span><p className="slot-text"> de </p><span className="slot-ing">{contains[1]}</span>
                     </div>
-                    <div class="slot-container">
-                        <svg class="slot-tag" width="22" height="22">
-                            <circle cx="11" cy="11" r="10" stroke="black" stroke-width="1" fill="none"/>
-                            <text x="50%" y="50%" font-size="1rem" font-weight="700" text-anchor="middle" fill="black" dy=".3em">C</text>
+                    <div className="slot-container">
+                        <svg className="slot-tag" width="22" height="22">
+                            <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
+                            <text x="50%" y="50%" fontSize="1rem" fontWeight="700" textAnchor="middle" fill="black" dy=".3em">C</text>
                         </svg>
-                        <span class="slot-qtd">80g</span><text class="slot-text"> de </text><span class="slot-ing">{contains[2]}</span>
+                        <span className="slot-qtd">80g</span><p className="slot-text"> de </p><span className="slot-ing">{contains[2]}</span>
                     </div>
                 </div>
             </div>
-            <div className={'card-footer d-flex ' + 'bg-' + priority}>
+            <div className={'card-footer d-flex bg-' + priority}>
                 <span>Prioridade</span>
                 <h3>{_priority[priority]}</h3>
             </div>

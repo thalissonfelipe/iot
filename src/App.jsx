@@ -1,15 +1,9 @@
-import Header from './components/Header';
-import Dashboard from './components/Dashboard';
+import Routes from './routes';
 
 import './styles/global.css';
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Dashboard />
-    </>
-  );
+	return <Routes />;
 }
 
 export default App;
