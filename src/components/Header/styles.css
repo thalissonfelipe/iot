@@ -1,14 +1,35 @@
 .header {
     position: relative;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 7rem;
+    padding-top: 1.2rem;
     background-color: var(--black);
+    box-shadow: 0 .25rem .25rem rgba(41, 41, 41, 0.24);
+    padding-bottom: .5rem;
 }
 
 .header a img {
     flex-shrink: 0;
     width: 14rem;
+}
+
+.header .arrow{
+    flex-shrink: 0;
+    width: 1.5rem;
+    margin: 2rem;
+    transition: .2s;
+    transition-timing-function: ease-out;
+}
+
+.header .arrow:hover{
+    flex-shrink: 0;
+    width: 1.5rem;
+    margin: 2rem;
+    opacity: 80%;
+    transform: scale(1.05);
+    transition: .2s;
+    transition-timing-function: ease-in;
 }
 
 .header::after {

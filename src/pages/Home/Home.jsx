@@ -4,7 +4,7 @@ import Dashboard from '../../components/Dashboard';
 export default function Home() {
     return (
         <>
-            <Header />
+            <Header previous = '/recipients' next='/ingredients' />
             <Dashboard />
         </>
     );

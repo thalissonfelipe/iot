@@ -1,0 +1,213 @@
+.recipient {
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.recipient h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+.forms {
+    margin-top: 2rem;
+    background-color: var(--white);
+    height: 100%;
+    width: 50%;
+    min-width: 40rem;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    border-radius: .4rem;
+    box-shadow: 0 .2rem .2rem rgba(41, 41, 41, 0.24);
+    align-self: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-recipient{
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-recipient label{
+    font-size: 1.2rem;
+    color: #000000AA;
+    padding-bottom: .5rem;
+}
+
+.form-recipient .content-text {
+    font-size: 1.2rem;
+    color: #000000AA;
+    padding-top: 2rem;
+    padding-bottom: .5rem;
+}
+
+.form-recipient #validation-id {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    padding-top: .3rem;
+    padding-bottom: .1rem;
+    border-width: 0 0 .2rem 0;
+    border-radius: .2rem;
+    border-color: #000000AA;
+    margin-bottom: 1.5rem;
+    transition: .3s;
+    transition-timing-function: ease-out;
+}
+
+.form-recipient #validation-id:focus {
+    outline: none;
+    border-color: var(--orange);
+    transition: .3s;
+    transition-timing-function: ease-in;
+}
+
+.form-content{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-divider {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+#ingredient-types {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+    width: 100%;
+    padding: .5rem;
+    margin: .5rem;
+    border-width: 0 0 .2rem 0;
+    border-radius: .2rem;
+    background-color: #FFF;
+}
+
+#ingredient-types {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+    width: 100%;
+    padding: .5rem;
+    border-width: .15rem;
+    border-radius: 2rem;
+    transition: .3s;
+    transition-timing-function: ease-out;
+    background-color: #FFF;
+}
+
+#ingredient-types:focus {
+    outline: none;
+    border-color: var(--orange);
+    transition: .3s;
+    transition-timing-function: ease-in;
+    background-color: #FFF;
+}
+
+#ingredient-types option{
+    text-align: center;
+    align-self: center;
+    align-content: center;
+    width: 100%;
+    padding: .5rem;
+    background-color: #FFF;
+}
+
+.slot-content {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    padding: .2rem;
+    
+}
+
+.slot-tag {
+    align-self: center;
+}
+
+.slot-content #content{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    border-width: 0 0 .2rem 0;
+    border-radius: .2rem;
+    height: 1.5rem;
+    padding-bottom: .1rem;
+    text-align: center;
+}
+
+.slot-content #content:focus{
+    outline: none;
+    border-color: var(--orange);
+    transition: .3s;
+    transition-timing-function: ease-in;
+    background-color: #FFF;
+}
+
+.submit-button {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 4rem;
+    border: none;
+    border-radius: 0 0 .4rem .4rem;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--orange);
+    box-shadow: 0 .2rem .4rem rgba(41, 41, 41, 0.24);
+    transition: .3s;
+    transition-timing-function: ease-out;
+}
+
+.submit-button:hover {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    border: none;
+    border-radius: 0 0 .4rem .4rem;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--orange);
+    opacity: 80%;
+    box-shadow: 0 .3rem .5rem rgba(41, 41, 41, 0.24);
+    transition: .3s;
+    transition-timing-function: ease-in;
+}
+
+.card-footer {
+    width: 100%;
+    height: 4rem;
+    border-radius: 0 0 .4rem .4rem;
+}
+
+.proto-image{
+    align-self: center;
+    vertical-align: center;
+    padding-right: 3.2rem;
+}
+
+#proto-icon{
+    align-self: center;
+    width: 15rem;
+}
