@@ -10,9 +10,9 @@ import rightarrow from '../../assets/arrow right.png';
 export default function Header({ previous, next }) {
     return (
         <header className="header d-flex">
-            <Link to={previous}><img src={leftarrow} class = 'arrow' alt='previous' /></Link>
+            <Link to={previous}><img src={leftarrow} className='arrow' alt='previous' /></Link>
             <Link to="/"><img src={logo} alt='Recipeful' /></Link>
-            <Link to={next}><img src={rightarrow} class = 'arrow' alt='next' /></Link>
+            <Link to={next}><img src={rightarrow} className='arrow' alt='next' /></Link>
         </header>
     );
 }

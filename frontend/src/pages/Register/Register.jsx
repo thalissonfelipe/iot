@@ -16,7 +16,7 @@ export default function Register() {
                     </div>
                 </div>
                 <div className="foreground-content">
-                    <form action="post" class="form-recipient">
+                    <form action="post" className="form-recipient">
                         <div className="main-container-register d-flex">
                             <div className="register-card">
                                 <h1>Cadastro</h1>
@@ -32,8 +32,8 @@ export default function Register() {
                                         <input type="password" id="pwd-id" className="text-input-register"></input>
                                     </div>
                             </div>
-                            <div class="card-footer d-flex">
-                                <input type="Submit" class="submit-button-register" value="Cadastrar"></input>
+                            <div className="card-footer d-flex">
+                                <input type="Submit" className="submit-button-register" value="Cadastrar"></input>
                             </div>
                         </div>
                         <Link to='/login' className="text-signup">Voltar</Link>

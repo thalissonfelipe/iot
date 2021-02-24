@@ -7,7 +7,7 @@ const RecipientSchema = new mongoose.Schema({
         required: true
     },
     temperature: [],
-    humidty: [],
+    humidity: [],
     weight: []
 });
 

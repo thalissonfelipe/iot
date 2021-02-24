@@ -8,7 +8,7 @@ class RecipientController {
                     _id: 0,
                     recipientId: 1,
                     temperature: { $arrayElemAt: ['$temperature', -1] },
-                    humidty: { $arrayElemAt: ['$humidty', -1] },
+                    humidity: { $arrayElemAt: ['$humidity', -1] },
                     weight: { $arrayElemAt: ['$weight', -1] }
                 }
             }]);

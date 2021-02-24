@@ -33,7 +33,7 @@ client.on('message', async (topic, message) => {
     if (channelId == 1) {
         doc = { $push: { temperature: value } }
     } else if (channelId == 2) {
-        doc = { $push: { humidty: value } }
+        doc = { $push: { humidity: value } }
     } else {
         doc = { $push: { weight: value } }
     }

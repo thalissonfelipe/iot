@@ -11,7 +11,7 @@ export default function Recipient() {
             <div className="container recipient d-flex">
                 <h1>Cadastrar Recipiente</h1>
                 <div className="forms d-flex">
-                    <form action="post" class="form-recipient">
+                    <form action="post" className="form-recipient">
                         <div className="content-divider">
                             <div className="proto-image">
                                 <img src={imgProto} alt='Humidity' id="proto-icon" />
@@ -29,7 +29,7 @@ export default function Recipient() {
                                     <option value="Temperos">Temperos</option>
                                     <option value="Outros">Outros</option>
                                 </select>
-                                <label for="slot-content" class="content-text">Conteúdo</label>
+                                <label for="slot-content" className="content-text">Conteúdo</label>
                                 <div className="slot-content">
                                     <svg className="slot-tag" width="22" height="22">
                                         <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
@@ -53,8 +53,8 @@ export default function Recipient() {
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer d-flex">
-                            <input type="Submit" class="submit-button" value="Cadastrar"></input>
+                        <div className="card-footer d-flex">
+                            <input type="Submit" className="submit-button" value="Cadastrar"></input>
                         </div>
                     </form>
                 </div>   
