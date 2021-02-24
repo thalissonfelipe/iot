@@ -21,6 +21,8 @@ df['outTemp'] = df['outTemp'].apply(fahrenheit_to_celsius)
 
 index = 0
 
+# atualizar valor de peso a cada 120k ms
+
 def get_random_value(channel):
     global index
     value = 0
@@ -29,7 +31,7 @@ def get_random_value(channel):
     elif channel == 2:
         value = df['inHum'].values[index]
     elif channel == 3:
-        value = random.uniform(100, 500)
+        value = random.uniform(0, 50)
 
     index += 1
     if index == len(df['inTemp'].values):

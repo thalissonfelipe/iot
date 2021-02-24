@@ -1,28 +1,13 @@
-const fs = require('fs');
-const path = require('path');
 const mqtt = require('mqtt');
+const config = require('./config');
 const Recipient = require('./models/Recipient');
 
-const configFile = fs.readFileSync(path.join('..', 'config.json'));
-const config = JSON.parse(configFile);
-
-const client = mqtt.connect(`mqtt://${config.mqtt.address}`, {
-    username: config.mqtt.username,
-    password: config.mqtt.password
+const client = mqtt.connect(config.getMQTTAddress(), {
+    username: config.getMQTTUsername(),
+    password: config.getMQTTPassword()
 });
 
-const topics = config.mqtt.recipients.map(id => ([
-    `v1/${config.mqtt.username}/things/${id}/data/1`,
-    `v1/${config.mqtt.username}/things/${id}/data/2`,
-    `v1/${config.mqtt.username}/things/${id}/data/3`
-]));
-
-client.on('connect', () => {
-    console.log('Connected with cayenne broker!');
-    topics.forEach(topic => {
-        topic.forEach(channel => client.subscribe(channel));
-    });
-});
+client.on('connect', () => console.log('Connected with cayenne broker!'));
 
 client.on('message', async (topic, message) => {
     const id = topic.split('/')[3];
@@ -40,3 +25,5 @@ client.on('message', async (topic, message) => {
 
     await Recipient.updateOne({ recipientId: id }, doc, { upsert: true })
 });
+
+module.exports = client;
