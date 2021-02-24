@@ -7,6 +7,8 @@ import {
 import Home from './pages/Home/Home';
 import Ingredients from './pages/Ingredients/Ingredients';
 import Recipient from './pages/Recipient/Recipient';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register'
 
 export default function Routes () {
     return (
@@ -15,6 +17,8 @@ export default function Routes () {
                 <Route path='/' exact component={Home} />
                 <Route path='/ingredients' component={Ingredients} />
                 <Route path='/recipients' component={Recipient} />
+                <Route path='/login' component={Login} />
+                <Route path='/register' component={Register} />
             </Switch>
         </Router>
     );
