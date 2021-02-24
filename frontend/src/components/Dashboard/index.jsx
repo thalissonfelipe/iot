@@ -23,22 +23,21 @@ export default function Dashboard() {
     }, []);
     
     return (
-        <div className="container dashboard d-flex">
-            <h1>Monitoramento</h1>
-            <div className="cards d-flex">
-                {recipients && recipients.map((recipient, i) => (
-                    <Card
-                        key={i}
-                        name={`Recipiente 0${i+1}`}
-                        type='Carnes'
-                        values={[recipient.temperature, recipient.humidity]}
-                        priority='low' outline={true} contains={['Alcatra', 'Patinho', 'Maminha']}
-                    />
-                ))}
-                {/* <Card name='Recipiente 01' type='Carnes' values={[-2, 50]} priority='low' outline={true} contains={['Alcatra', 'Patinho', 'Maminha']}/>
-                <Card name='Recipiente 02' type='Verduras' values={[8, 60]} priority='high' outline={true} contains={['Alface', 'Brocolis', 'Coentro']}/>
-                <Card name='Recipiente 03' type='Frutas' values={[9, 80]} priority='medium' outline={true} contains={['Abacate', 'Banana', 'Cajarana']}/> */}
+        recipients && (
+            <div className="container dashboard d-flex">
+                <h1>Monitoramento</h1>
+                <div className="cards d-flex">
+                    {recipients.map((recipient, i) => (
+                        <Card
+                            key={i}
+                            name={`Recipiente 0${i+1}`}
+                            type={recipient.ingredientType}
+                            values={[recipient.temperature, recipient.humidity]}
+                            priority='low' outline={true} content={recipient.content}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        )
     );
 }
