@@ -32,8 +32,10 @@ export default function Dashboard() {
                             key={i}
                             name={`Recipiente 0${i+1}`}
                             type={recipient.ingredientType}
-                            values={[recipient.temperature, recipient.humidity]}
-                            priority='low' outline={true} content={recipient.content}
+                            values={[recipient.temperature, recipient.humidity, recipient.weight1, recipient.weight2, recipient.weight3]}
+                            priority={recipient.priority == 0 ? 'low' : recipient.priority == 1 ? 'medium' : 'high'}
+                            outline={true}
+                            content={recipient.content}
                         />
                     ))}
                 </div>

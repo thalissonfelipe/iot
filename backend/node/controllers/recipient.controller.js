@@ -13,7 +13,10 @@ class RecipientController {
                     content: 1,
                     temperature: { $arrayElemAt: ['$temperature', -1] },
                     humidity: { $arrayElemAt: ['$humidity', -1] },
-                    weight: { $arrayElemAt: ['$weight', -1] }
+                    weight1: { $arrayElemAt: ['$weight1', -1] },
+                    weight2: { $arrayElemAt: ['$weight2', -1] },
+                    weight3: { $arrayElemAt: ['$weight3', -1] },
+                    priority: { $arrayElemAt: ['$priority', -1] }
                 }
             }]);
 
@@ -46,7 +49,10 @@ class RecipientController {
             const topics = [
                 `v1/${config.getMQTTUsername()}/things/${recipientId}/data/1`,
                 `v1/${config.getMQTTUsername()}/things/${recipientId}/data/2`,
-                `v1/${config.getMQTTUsername()}/things/${recipientId}/data/3`
+                `v1/${config.getMQTTUsername()}/things/${recipientId}/data/3`,
+                `v1/${config.getMQTTUsername()}/things/${recipientId}/data/4`,
+                `v1/${config.getMQTTUsername()}/things/${recipientId}/data/5`,
+                `v1/${config.getMQTTUsername()}/things/${recipientId}/data/6`,
             ];
 
             topics.forEach(topic => cayenneClient.subscribe(topic));

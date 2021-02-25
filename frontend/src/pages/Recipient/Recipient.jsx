@@ -18,24 +18,28 @@ export default function Recipient() {
 
     const onSubmit = async e => {
         e.preventDefault();
-        
+
         if (!recipientId || !ingredientType || !content.a || !content.b || !content.c) {
-            alert('Preencha todos os campos!'); // TODO: melhorar resposta
+            alert('Preencha todos os campos!'); // TODO: improve feedback to the user
+            return
         }
 
         const body = { recipientId, ingredientType, content };
 
         const response = await axios.post('http://localhost:3001/recipients', body);
-        alert(response.data);
-
-        // reset fields
-        setRecipientId('');
-        setIngredientType('Carnes');
-        setContent({
-            a: '',
-            b: '',
-            c: ''
-        });
+        if (response.status === 201) {
+            alert(response.data);
+            // reset fields
+            setRecipientId('');
+            setIngredientType('Carnes');
+            setContent({
+                a: '',
+                b: '',
+                c: ''
+            });
+        } else if (response.status === 500) {
+            alert('Internal Error!');
+        }
     }
 
     return (
@@ -50,20 +54,21 @@ export default function Recipient() {
                                 <img src={imgProto} alt='Humidity' id="proto-icon" />
                             </div>
                             <div className="form-content d-flex">
-                                <label for="validation-id">ID do recipiente</label>
+                                <label htmlFor="validation-id">ID do recipiente</label>
                                 <input
                                     type="text"
                                     id="validation-id"
                                     value={recipientId}
                                     onChange={e => setRecipientId(e.target.value)}
                                 />
-                                <label for="ingredient-types">Tipo de Ingrediente</label>
+                                <label htmlFor="ingredient-types">Tipo de Ingrediente</label>
                                 <select
                                     name="Tipos"
                                     id="ingredient-types"
+                                    value={ingredientType}
                                     onChange={e => setIngredientType(e.target.value)}
                                 >
-                                    <option value="Carnes" selected>Carnes</option>
+                                    <option value="Carnes">Carnes</option>
                                     <option value="Frios">Frios</option>
                                     <option value="Verduras">Verduras</option>
                                     <option value="Frutas">Frutas</option>
@@ -71,7 +76,7 @@ export default function Recipient() {
                                     <option value="Temperos">Temperos</option>
                                     <option value="Outros">Outros</option>
                                 </select>
-                                <label for="slot-content" className="content-text">Conteúdo</label>
+                                <label htmlFor="slot-content" className="content-text">Conteúdo</label>
                                 <div className="slot-content">
                                     <svg className="slot-tag" width="22" height="22">
                                         <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
@@ -108,7 +113,7 @@ export default function Recipient() {
                             </div>
                         </div>
                         <div className="card-footer d-flex">
-                            <input type="Submit" className="submit-button" value="Cadastrar" />
+                            <button type="Submit" className="submit-button">Cadastrar</button>
                         </div>
                     </form>
                 </div>   

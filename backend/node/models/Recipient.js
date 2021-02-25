@@ -26,7 +26,19 @@ const RecipientSchema = new mongoose.Schema({
         type: Array,
         default: []
     },
-    weight: {
+    weight1: {
+        type: Array,
+        default: []
+    },
+    weight2: {
+        type: Array,
+        default: []
+    },
+    weight3: {
+        type: Array,
+        default: []
+    },
+    priority: {
         type: Array,
         default: []
     }

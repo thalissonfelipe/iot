@@ -35,21 +35,21 @@ export default function Card({ name, type, values, priority, outline, content })
                             <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
                             <text x="50%" y="50%" fontSize="1rem" fontWeight="700" textAnchor="middle" fill="black" dy=".3em">A</text>
                         </svg>
-                        <span className="slot-qtd">20g</span><p className="slot-text"> de </p><span className="slot-ing">{content.a}</span>
+                        <span className="slot-qtd">{values[2]}g</span><p className="slot-text"> de </p><span className="slot-ing">{content.a}</span>
                     </div>
                     <div className="slot-container">
                         <svg className="slot-tag" width="22" height="22">
                             <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
                             <text x="50%" y="50%" fontSize="1rem" fontWeight="700" textAnchor="middle" fill="black" dy=".3em">B</text>
                         </svg>
-                        <span className="slot-qtd">50g</span><p className="slot-text"> de </p><span className="slot-ing">{content.b}</span>
+                        <span className="slot-qtd">{values[3]}g</span><p className="slot-text"> de </p><span className="slot-ing">{content.b}</span>
                     </div>
                     <div className="slot-container">
                         <svg className="slot-tag" width="22" height="22">
                             <circle cx="11" cy="11" r="10" stroke="black" strokeWidth="1" fill="none"/>
                             <text x="50%" y="50%" fontSize="1rem" fontWeight="700" textAnchor="middle" fill="black" dy=".3em">C</text>
                         </svg>
-                        <span className="slot-qtd">80g</span><p className="slot-text"> de </p><span className="slot-ing">{content.c}</span>
+                        <span className="slot-qtd">{values[4]}g</span><p className="slot-text"> de </p><span className="slot-ing">{content.c}</span>
                     </div>
                 </div>
             </div>
