@@ -13,8 +13,6 @@ export default function Dashboard() {
         setRecipients(data);
     }
 
-    // fetchData();
-
     useEffect(() => {
         fetchData();
         const intervalId = setInterval(fetchData, 10000);
