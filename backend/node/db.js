@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/iot_db', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-}, err => {
-    if (!err) console.log('Connected with mongodb!');
-    else console.log(err);
-});
+// TODO: add mongodb credentials later
+const url ='mongodb+srv://iot:iot@cluster0.sbyep.mongodb.net/iot_db?retryWrites=true&w=majority';
+
+(async function connectDB() {
+    await mongoose.connect(url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true
+    });
+
+    console.log('Connected with mongodb!');
+
+    require('./subscriber');
+})();
