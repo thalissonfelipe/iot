@@ -7,6 +7,7 @@
     margin-top: 2rem;
     background-color: var(--white);
     height: 100%;
+    min-width: 20rem;
     padding-top: 2rem;
     border-radius: .4rem;
     box-shadow: 0 .2rem .2rem rgba(41, 41, 41, 0.24);
@@ -42,11 +43,13 @@
 }
 
 .sensor-values {
+    align-content: center;
+    align-self: center;
     margin-top: 1rem;
     width: 80%;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-evenly;
 }
 
 .sensor-value:first-child {
@@ -142,7 +145,8 @@
 }
 
 .slot-container{
-    width: 100%;
+    align-self: center;
+    width: 115%;
     display: flex;
     align-content: center;
     flex-direction: row;

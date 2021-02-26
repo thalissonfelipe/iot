@@ -6,7 +6,8 @@ export default function Button({ type, outline }) {
     const _ing = {
         'Carnes': 'meat',
         'Verduras': 'veg',
-        'Frutas': 'fruit'
+        'Frutas': 'fruit',
+        'Frios': 'fruit'
     };
     
     const classes = 'btn-' + _ing[type] + (outline ? '-outline ' : ' ');
