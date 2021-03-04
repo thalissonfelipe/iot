@@ -1,4 +1,4 @@
-const config = require('../config.json');
+const config = require('../mqtt.config.json');
 
 module.exports = {
     getMQTTAddress: () => `mqtt://${config.mqtt.address}`,
