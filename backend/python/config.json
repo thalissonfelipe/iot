@@ -1,0 +1,13 @@
+{
+    "mqtt": {
+        "address": "mqtt.mydevices.com",
+        "port": 1883,
+        "username": "fdadf990-56c7-11eb-8779-7d56e82df461",
+        "password": "4f89cea518519a6a40405888fec8a3d6c250d158",
+        "recipients": [
+            "7a7a4d70-59cf-11eb-8779-7d56e82df461",
+            "a3fdd400-67fd-11eb-8779-7d56e82df461",
+            "cf7927f0-67fe-11eb-b767-3f1a8f1211ba"
+        ]
+    }
+}
