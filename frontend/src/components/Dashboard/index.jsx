@@ -6,7 +6,7 @@ import Card from '../Card';
 import './styles.css';
 
 export default function Dashboard() {
-    const [recipients, setRecipients] = useState([]);
+    const [recipients, setRecipients] = useState([])
 
     const fetchData = async () => {
         const { data } = await axios.get('http://localhost:3001/recipients');
