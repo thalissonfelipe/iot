@@ -1,4 +1,3 @@
-import os
 import time
 import json
 import random
@@ -7,7 +6,7 @@ from threading import Thread
 import paho.mqtt.client as mqtt
 
 
-with open(os.path.join('..', 'config.json')) as json_file:
+with open('config.json') as json_file:
     config = json.load(json_file)
 
 
