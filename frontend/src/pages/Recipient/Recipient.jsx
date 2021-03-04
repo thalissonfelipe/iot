@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 
 import Header from '../../components/Header';
+import { getUsername } from '../../services/auth';
 
 import './styles.css';
-
 import imgProto from '../../assets/prototipo-recipiente.png'
 
 export default function Recipient() {
@@ -15,36 +15,55 @@ export default function Recipient() {
         b: '',
         c: ''
     });
+    const [message, setMessage] = useState(null);
+
+    function clearFields() {
+        setRecipientId('');
+        setIngredientType('Carnes');
+        setContent({
+            a: '',
+            b: '',
+            c: ''
+        });
+    }
 
     const onSubmit = async e => {
         e.preventDefault();
+        setMessage(null);
 
         if (!recipientId || !ingredientType || !content.a || !content.b || !content.c) {
-            alert('Preencha todos os campos!'); // TODO: improve feedback to the user
-            return
+            setMessage({
+                message: 'Todos os campos devem ser preenchidos.',
+                type: 'error'
+            });
+            return;
         }
 
-        const body = { recipientId, ingredientType, content };
+        const body = {
+            recipientId,
+            ingredientType,
+            content,
+            username: getUsername()
+        };
 
-        const response = await axios.post('http://localhost:3001/recipients', body);
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/recipients`, body);
         if (response.status === 201) {
-            alert(response.data);
-            // reset fields
-            setRecipientId('');
-            setIngredientType('Carnes');
-            setContent({
-                a: '',
-                b: '',
-                c: ''
+            clearFields();
+            setMessage({
+                message: 'Novo recipiente criado.',
+                type: 'success'
             });
         } else if (response.status === 500) {
-            alert('Internal Error!');
+            setMessage({
+                message: 'Alguma coisa deu errado. Tente novamente!',
+                type: 'error'
+            });
         }
     }
 
     return (
         <>
-            <Header previous = '/ingredients' next='/'/>
+            <Header previous='/ingredients' next='/'/>
             <div className="container recipient d-flex">
                 <h1>Cadastrar Recipiente</h1>
                 <div className="forms d-flex">
@@ -110,6 +129,9 @@ export default function Recipient() {
                                         onChange={e => setContent({...content, c: e.target.value })}
                                     />
                                 </div>
+                                {message && <p className={`flash-message flash-message-${message.type}`}>
+                                    {message.message}
+                                </p>}
                             </div>
                         </div>
                         <div className="card-footer d-flex">

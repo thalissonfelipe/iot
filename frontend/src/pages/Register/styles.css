@@ -148,6 +148,7 @@
     box-shadow: 0 .2rem .4rem rgba(41, 41, 41, 0.24);
     transition: .3s;
     transition-timing-function: ease-out;
+    cursor: pointer;
 }
 
 .submit-button-register:hover {

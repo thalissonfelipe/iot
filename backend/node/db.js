@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-// TODO: add mongodb credentials later
-const url ='mongodb+srv://iot:iot@cluster0.sbyep.mongodb.net/iot_db?retryWrites=true&w=majority';
+const url = process.env.MONGODB_URI;
 
 (async function connectDB() {
     await mongoose.connect(url, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useCreateIndex: true
+        useCreateIndex: true,
+        useFindAndModify: false
     });
 
     console.log('Connected with mongodb!');

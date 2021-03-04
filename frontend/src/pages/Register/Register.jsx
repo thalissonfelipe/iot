@@ -1,6 +1,6 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
 
 import { isAuthenticated } from '../../services/auth';
 
@@ -26,9 +26,20 @@ export default function Register() {
             !username ||
             !email ||
             !password ||
-            !repeatPassword ||
-            password !== repeatPassword
+            !repeatPassword
         ) {
+            setMessage({
+                message: 'Todos os campos devem ser preenchidos.',
+                type: 'error'
+            });
+            return;
+        }
+
+        if (password !== repeatPassword) {
+            setMessage({
+                message: 'Senhas diferentes.',
+                type: 'error'
+            });
             return;
         }
 
@@ -39,11 +50,29 @@ export default function Register() {
         };
 
         try {
-            const response = await axios.post('http://localhost:3001/register', body);
-            setMessage(response.data);
+            await axios.post(`${process.env.REACT_APP_API_URL}/register`, body);
+            setMessage({
+                message: 'Novo usuário criado.',
+                type: 'success'
+            });
         } catch (error) {
-            if (error.response && error.response.status === 409) {
-                setMessage(error.response.data);
+            if (error.response) {
+                if (error.response.status === 409) {
+                    setMessage({
+                        message: 'Username/email já cadastrado.',
+                        type: 'error'
+                    });
+                } else if (error.response.status === 500) {
+                    setMessage({
+                        message: 'Alguma coisa deu errado. Tente novamente!',
+                        type: 'error'
+                    });
+                }
+            } else {
+                setMessage({
+                    message: 'Alguma coisa deu errado. Tente novamente!',
+                    type: 'error'
+                });
             }
         }
     }
@@ -87,6 +116,7 @@ export default function Register() {
                                             className="text-input-register"
                                             value={password}
                                             onChange={e => setPassword(e.target.value)}
+                                            autoComplete="off"
                                         />
                                         <label htmlFor="pwd-id2">Repetir Senha</label>
                                         <input
@@ -95,14 +125,17 @@ export default function Register() {
                                             className="text-input-register"
                                             value={repeatPassword}
                                             onChange={e => setRepeatPassword(e.target.value)}
+                                            autoComplete="off"
                                         />
                                     </div>
                             </div>
                             <div className="card-footer d-flex">
                                 <input type="submit" className="submit-button-register" value="Cadastrar"></input>
                             </div>
+                            {message && <p className={`flash-message flash-message-${message.type}`}>
+                                {message.message}
+                            </p>}
                         </div>
-                        { message && <p>{message}</p> }
                         <Link to='/login' className="text-signup">Voltar</Link>
                     </form>                  
                 </div>

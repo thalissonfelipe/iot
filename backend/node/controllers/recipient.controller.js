@@ -1,24 +1,31 @@
 const config = require('../config');
+const User = require('../models/User');
 const cayenneClient = require('../subscriber');
 const Recipient = require('../models/Recipient');
 
 class RecipientController {
     async index(req, res) {
         try {
-            const response = await Recipient.aggregate([{
-                $project: {
-                    _id: 0,
-                    recipientId: 1,
-                    ingredientType: 1,
-                    content: 1,
-                    temperature: { $arrayElemAt: ['$temperature', -1] },
-                    humidity: { $arrayElemAt: ['$humidity', -1] },
-                    weight1: { $arrayElemAt: ['$weight1', -1] },
-                    weight2: { $arrayElemAt: ['$weight2', -1] },
-                    weight3: { $arrayElemAt: ['$weight3', -1] },
-                    priority: { $arrayElemAt: ['$priority', -1] }
+            const userId = (await User.findOne({ username: req.query.username }))._id;
+
+            const response = await Recipient.aggregate([
+                {
+                    $match: { userId }
+                }, {
+                    $project: {
+                        _id: 0,
+                        recipientId: 1,
+                        ingredientType: 1,
+                        content: 1,
+                        temperature: { $arrayElemAt: ['$temperature', -1] },
+                        humidity: { $arrayElemAt: ['$humidity', -1] },
+                        weight1: { $arrayElemAt: ['$weight1', -1] },
+                        weight2: { $arrayElemAt: ['$weight2', -1] },
+                        weight3: { $arrayElemAt: ['$weight3', -1] },
+                        priority: { $arrayElemAt: ['$priority', -1] }
+                    }
                 }
-            }]);
+            ]);
 
             return res.status(200).json(response);
         } catch (error) {
@@ -32,19 +39,18 @@ class RecipientController {
             const {
                 recipientId,
                 ingredientType,
-                content
+                content,
+                username
             } = req.body;
 
-            // TODO: add validation
-            // verify if recipient already exists
-            // validate body
-            const recipient = new Recipient({
+            const userId = (await User.findOne({ username }))._id;
+
+            await Recipient.create({
                 recipientId,
+                userId,
                 ingredientType,
                 content
             });
-
-            await recipient.save();
 
             const topics = [
                 `v1/${config.getMQTTUsername()}/things/${recipientId}/data/1`,

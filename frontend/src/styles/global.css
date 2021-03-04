@@ -53,3 +53,19 @@ li {
     display: flex;
     align-items: center;
 }
+
+.flash-message {
+    visibility: hidden;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.flash-message-success {
+    visibility: visible;
+    color: green;
+}
+
+.flash-message-error {
+    visibility: visible;
+    color: red;
+}

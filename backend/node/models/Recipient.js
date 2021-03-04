@@ -6,6 +6,10 @@ const RecipientSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
+    userId: {
+        type: mongoose.Types.ObjectId,
+        required: true,
+    },
     ingredientType: {
         type: String,
         required: true

@@ -1,11 +1,10 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
 
-import { login, isAuthenticated } from '../../services/auth';
+import { login, isAuthenticated, currentUser } from '../../services/auth';
 
 import './styles.css';
-
 import logo from '../../assets/logo vert.png';
 
 export default function Login() {
@@ -23,19 +22,38 @@ export default function Login() {
         setMessage(null);
 
         if (!username || !password) {
-            setMessage('Todos os campos devem ser preenchidos.');
+            setMessage({
+                message: 'Todos os campos devem ser preenchidos.',
+                type: 'error'
+            });
             return;
         }
 
         const body = { username, password };
 
         try {
-            await axios.post('http://localhost:3001/login', body);
+            await axios.post(`${process.env.REACT_APP_API_URL}/login`, body);
             login('logged');
+            currentUser(username);
             history.push('/');
         } catch (error) {
-            if (error.response && error.response.status === 401) {
-                setMessage('Username ou senha inválidos.');
+            if (error.response) {
+                if (error.response.status === 401) {
+                    setMessage({
+                        message: 'Username ou senha inválidos.',
+                        type: 'error'
+                    });
+                } else if (error.response.status === 500) {
+                    setMessage({
+                        message: 'Alguma coisa deu errado. Tente novamente!',
+                        type: 'error'
+                    });
+                }
+            } else {
+                setMessage({
+                    message: 'Alguma coisa deu errado. Tente novamente!',
+                    type: 'error'
+                });
             }
         }
     }
@@ -71,14 +89,19 @@ export default function Login() {
                                         placeholder="Senha"
                                         value={password}
                                         onChange={e => setPassword(e.target.value)}
+                                        autoComplete="off"
                                     />
                                     <input
                                         type="submit"
                                         id="login-button"
                                         value="Entrar"
                                     />
+                                    { message && (
+                                        <p className='flash-message flash-message-error'>
+                                            {message.message}
+                                        </p>
+                                    )}
                                 </form>
-                                { message && <p>{message}</p> }
                                 <Link to='/register' className="text-signup">Cadastre-se</Link>
                             </div>
                         </div>         

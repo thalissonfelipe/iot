@@ -3,9 +3,8 @@ import React from 'react';
 import Button from '../Button';
 
 import './styles.css';
-
-import tempIcon from '../../assets/temp-icon.png';
 import humIcon from '../../assets/hum-icon.png';
+import tempIcon from '../../assets/temp-icon.png';
 
 export default function Card({ name, type, values, priority, outline, content }) {
     const _priority = {

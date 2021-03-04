@@ -3,18 +3,23 @@ const bcrypt = require('bcrypt');
 
 class UserController {
     async login(req, res) {
-        const body = req.body;
-        const user = await User.findOne({ username: body.username });
+        try {
+            const body = req.body;
+            const user = await User.findOne({ username: body.username });
 
-        if (!user) {
-            return res.status(401).send('Invalid username or password.');
+            if (!user) {
+                return res.status(401).send('Invalid username or password.');
+            }
+
+            if (!bcrypt.compareSync(body.password, user.password)) {
+                return res.status(401).send('Invalid username or password.');
+            }
+
+            return res.status(200).send('OK');
+        } catch (error) {
+            console.log(error);
+            return res.status(500).send('Internal Error!');
         }
-
-        if (!bcrypt.compareSync(body.password, user.password)) {
-            return res.status(401).send('Invalid username or password.');
-        }
-
-        return res.status(200).send('OK');
     }
 
     async register(req, res) {

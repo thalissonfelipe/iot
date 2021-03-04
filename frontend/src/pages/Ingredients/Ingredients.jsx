@@ -5,7 +5,7 @@ import './styles.css';
 export default function Ingredients() {
     return (
         <>
-            <Header previous = '/' next='/recipients'/>
+            <Header previous='/' next='/recipients'/>
             <main className="main container d-flex">
                 <header className="top-header d-flex">
                     <h1 className="title">Melhor Receita</h1>

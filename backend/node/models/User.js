@@ -14,10 +14,6 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    recipients: {
-        type: Array,
-        default: []
     }
 });
 
