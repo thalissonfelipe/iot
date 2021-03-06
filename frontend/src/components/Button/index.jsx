@@ -9,7 +9,7 @@ export default function Button({ type, outline }) {
         'Frutas': 'fruit',
         'Frios': 'fruit'
     };
-    
+
     const classes = 'btn-' + _ing[type] + (outline ? '-outline ' : ' ');
 
     return (

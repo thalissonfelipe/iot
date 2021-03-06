@@ -137,7 +137,7 @@ export default function Register() {
                             </p>}
                         </div>
                         <Link to='/login' className="text-signup">Voltar</Link>
-                    </form>                  
+                    </form>
                 </div>
             </div>
         </>

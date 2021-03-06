@@ -1,15 +1,18 @@
 import {
-    BrowserRouter as Router,
+    Router,
     Switch,
     Route,
     Redirect
 } from 'react-router-dom';
 
-import Home from './pages/Home/Home';
-import Ingredients from './pages/Ingredients/Ingredients';
-import Recipient from './pages/Recipient/Recipient';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import history from './history';
+
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import CreateRecipient from './pages/CreateRecipient';
+import EditRecipient from './pages/EditRecipient';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 import { isAuthenticated } from './services/auth';
 
@@ -28,11 +31,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 export default function Routes () {
     return (
-        <Router>
+        <Router history={history}>
             <Switch>
-                <Route path='/' exact component={Ingredients} />
-                <PrivateRoute path='/dashboard' component={Home} />
-                <PrivateRoute path='/recipients' component={Recipient} />
+                <Route path='/' exact component={Home} />
+                <PrivateRoute path='/dashboard' component={Dashboard} />
+                <PrivateRoute exact path='/recipients' component={CreateRecipient} />
+                <PrivateRoute path='/recipients/edit' component={EditRecipient} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
                 <Route path="*" component={() => <h1>Page not found</h1>} />

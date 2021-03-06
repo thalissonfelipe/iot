@@ -104,7 +104,7 @@ export default function Login() {
                                 </form>
                                 <Link to='/register' className="text-signup">Cadastre-se</Link>
                             </div>
-                        </div>         
+                        </div>
                     </div>
                 </div>
             </div>

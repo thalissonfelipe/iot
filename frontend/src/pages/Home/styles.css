@@ -82,11 +82,11 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--orange); 
+    background: var(--orange);
 }
 
 ::-webkit-scrollbar-thumb:hover {

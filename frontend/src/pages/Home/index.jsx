@@ -1,11 +1,13 @@
 import Header from '../../components/Header';
+import FabIcon from '../../components/FabIcon';
 
 import './styles.css';
 
-export default function Ingredients() {
+export default function Home() {
     return (
         <>
-            <Header previous='/' next='/recipients'/>
+            <FabIcon />
+            <Header previous='/recipients' next='/dashboard'/>
             <main className="main container d-flex">
                 <header className="top-header d-flex">
                     <h1 className="title">Melhor Receita</h1>
