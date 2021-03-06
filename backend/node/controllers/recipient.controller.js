@@ -69,6 +69,17 @@ class RecipientController {
             return res.status(500).send('Internal Error.');
         }
     }
+
+    async update(req, res) {
+        try {
+            await Recipient.findOneAndUpdate({ recipientId: req.params.id }, req.body);
+
+            return res.status(204).send('Recipient updated.');
+        } catch (error) {
+            console.log(error);
+            return res.status(500).send('Internal Error.');
+        }
+    }
 }
 
 module.exports = new RecipientController();
