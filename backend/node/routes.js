@@ -1,12 +1,19 @@
 const router = require('express').Router();
 const RecipientController = require('./controllers/recipient.controller');
-const UserController = require('./controllers/users.controller');
+const UserController = require('./controllers/user.controller');
+const RecipeController = require('./controllers/recipe.controller');
 
-router.get('/recipients', RecipientController.index);
-router.post('/recipients', RecipientController.create);
-router.put('/recipients/:id', RecipientController.update);
+const recipientController = new RecipientController();
+const userController = new UserController();
+const recipeController = new RecipeController();
 
-router.post('/login', UserController.login);
-router.post('/register', UserController.register);
+router.get('/recipients', recipientController.index);
+router.post('/recipients', recipientController.create);
+router.put('/recipients/:id', recipientController.update);
+
+router.post('/login', userController.login);
+router.post('/register', userController.register);
+
+router.get('/recipes', recipeController.index);
 
 module.exports = router;

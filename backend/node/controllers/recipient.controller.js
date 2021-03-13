@@ -82,4 +82,4 @@ class RecipientController {
     }
 }
 
-module.exports = new RecipientController();
+module.exports = RecipientController;
