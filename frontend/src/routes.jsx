@@ -13,6 +13,7 @@ import CreateRecipient from './pages/CreateRecipient';
 import EditRecipient from './pages/EditRecipient';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Recipe from './pages/Recipe';
 
 import { isAuthenticated } from './services/auth';
 
@@ -34,6 +35,7 @@ export default function Routes () {
         <Router history={history}>
             <Switch>
                 <Route path='/' exact component={Home} />
+                <Route path='/recipes/:name' component={Recipe} />
                 <PrivateRoute path='/dashboard' component={Dashboard} />
                 <PrivateRoute exact path='/recipients' component={CreateRecipient} />
                 <PrivateRoute path='/recipients/edit' component={EditRecipient} />

@@ -1,118 +1,40 @@
-.main {
-    margin-top: 4.7rem;
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    overflow: hidden;
+.container {
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    min-width: 468px;
-    box-shadow: 0 .4rem .8rem rgba(41, 41, 41, 0.24);
 }
 
-@media (max-width: 1280px) {
-    .main {
-        border-radius: unset;
-    }
+.container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
 }
 
-.top-header {
-    flex-direction: column;
+.recipes-list {
+    display: flex;
     justify-content: center;
-    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
     width: 100%;
-    height: 14rem;
+    max-width: 1280px;
+    margin: 20px auto 0;
+    overflow: auto;
 }
 
-.top-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-image: url('../../assets/ingredient-hero-header.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    z-index: -1;
-}
-
-.top-header img {
-    width: 100%;
-}
-
-.title {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 5rem;
+.see-more {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--orange);
     color: var(--white);
-    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    transition: opacity .2s;
 }
 
-.subtitle {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 4rem;
-    color: var(--white);
-}
-
-.h3 {
-    display: inline-block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--orange);
-}
-
-.finished-text {
-    display: inline-block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-    color: var(--orange);
-}
-
-.scrollable-div {
-    max-height: 30rem;
-    width: 100%;
-    overflow-y: scroll;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--orange);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #ff8453;
-}
-
-.ingredients-section,
-.preparation-mode {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    flex-direction: column;
-    padding-top: 2rem;
-}
-
-.list {
-    padding-top: 1.5rem;
-    flex-direction: column;
-}
-
-.list:last-child {
-    padding-bottom: 1rem;
-}
-
-.list-item {
-    font-size: 1rem;
-    color: var(--orange);
-    padding: .5rem 0;
+.see-more:hover {
+    opacity: .8;
 }

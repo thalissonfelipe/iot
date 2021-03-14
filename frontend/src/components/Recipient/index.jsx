@@ -126,6 +126,7 @@ export default function Recipient({ title, type }) {
 
     function handleSearchButton() {
         const recipientExists = recipients.find(recipient => recipient.recipientId === recipientId);
+        if (!recipientId || !recipientExists) return;
         setRecipient(recipientExists);
         setShowForm(!showForm);
     }
