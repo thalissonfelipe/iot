@@ -45,7 +45,7 @@ export default function Home() {
                         })
                     }
                 </div>
-                { showSeeMoreButton && (
+                {(recipes && showSeeMoreButton) && (
                     <button
                         className="see-more"
                         onClick={() => setCurrentPage(currentPage + 1)}

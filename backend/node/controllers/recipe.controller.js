@@ -8,12 +8,14 @@ const User = require('../models/User');
  * @param {*} recipientsContent the content monitored Ex.: alface, ...
  */
 function filterRecipes(recipes, recipientsContent) {
-    const regex = new RegExp(recipientsContent.join('|'));
-
     const filteredRecipes = recipes.filter(recipe => {
+        let content = recipientsContent.map(c => c.toLowerCase());
+        let regex = new RegExp(content.join('|'));
         let score = 0;
         recipe.ingredients.forEach(ingredient => {
-            if (regex.test(ingredient)) {
+            if (regex.test(ingredient.toLowerCase())) {
+                content = content.filter(c => !ingredient.includes(c));
+                regex = new RegExp(content.join('|'));
                 score += 1;
             }
         });
