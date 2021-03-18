@@ -13,7 +13,7 @@ function filterRecipes(recipes, recipientsContent) {
         let regex = new RegExp(content.join('|'));
         let score = 0;
         recipe.ingredients.forEach(ingredient => {
-            if (regex.test(ingredient.toLowerCase())) {
+            if (content.length && regex.test(ingredient.toLowerCase())) {
                 content = content.filter(c => !ingredient.includes(c));
                 regex = new RegExp(content.join('|'));
                 score += 1;
