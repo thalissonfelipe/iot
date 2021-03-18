@@ -12,7 +12,7 @@ import './styles.css';
 export default function Home() {
     const [recipes, setRecipes] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [showSeeMoreButton, setShowSeeMoreButton] = useState(true);
+    const [showSeeMoreButton, setShowSeeMoreButton] = useState(false);
 
     useEffect(() => {
         const fetchRecipes = async () => {
@@ -23,6 +23,8 @@ export default function Home() {
             if (data.length === 0) {
                 setShowSeeMoreButton(false);
                 return;
+            } else {
+                setShowSeeMoreButton(true);
             }
             setRecipes([...recipes, ...data]);
         }

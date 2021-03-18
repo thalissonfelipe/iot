@@ -19,7 +19,7 @@ export default function RecipeCard({ recipe }) {
             <img src={recipe.image_url} alt="Food" />
             <div className="recipe-info">
                 <h2 title={recipe.name}>{recipe.name}</h2>
-                {isAuthenticated() && <span>{recipe.score} de {recipe.total} ingredientes</span>}
+                {(isAuthenticated() && recipe.total) ? <span>{recipe.score} de {recipe.total} ingredientes</span> : ''}
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ const Recipient = require('../models/Recipient');
 const User = require('../models/User');
 
 /**
- * 
+ *
  * @param {*} recipes all recipes save in the database
  * @param {*} recipientsContent the content monitored Ex.: alface, ...
  */
@@ -45,7 +45,7 @@ function getContentArray(content) {
 class RecipeController {
     async index(req, res) {
         try {
-            const maxItemsPerPage = 51;
+            const maxItemsPerPage = 30;
             const page = req.query.page;
             const skip = (maxItemsPerPage * page) - maxItemsPerPage;
 
@@ -56,6 +56,16 @@ class RecipeController {
                     _id: 0,
                     content: 1
                 });
+
+                if (!recipientsContent.length) { // 0 recipients registered
+                    const recipes = await Recipe
+                                    .find()
+                                    .skip((maxItemsPerPage * page) - maxItemsPerPage)
+                                    .limit(maxItemsPerPage);
+
+                    return res.status(200).json(recipes);
+                }
+
                 const content = getContentArray(recipientsContent);
                 let filteredRecipes = filterRecipes(recipes, content);
 
