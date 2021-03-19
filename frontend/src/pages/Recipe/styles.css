@@ -34,6 +34,7 @@
     font-weight: 700;
     line-height: 5rem;
     color: var(--white);
+    text-shadow: 0 0rem .8rem var(--black);
     text-transform: uppercase;
 }
 

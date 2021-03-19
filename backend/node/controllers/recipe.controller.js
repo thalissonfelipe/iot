@@ -45,7 +45,7 @@ function getContentArray(content) {
 class RecipeController {
     async index(req, res) {
         try {
-            const maxItemsPerPage = 30;
+            const maxItemsPerPage = 12;
             const page = req.query.page;
             const skip = (maxItemsPerPage * page) - maxItemsPerPage;
 

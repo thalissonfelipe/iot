@@ -16,7 +16,7 @@ export default function RecipeCard({ recipe }) {
 
     return (
         <div className="recipe-card" onClick={handleOnClick}>
-            <img src={recipe.image_url} alt="Food" />
+            <img src={recipe.image_url + "?w=200"} alt="Food" />
             <div className="recipe-info">
                 <h2 title={recipe.name}>{recipe.name}</h2>
                 {(isAuthenticated() && recipe.total) ? <span>{recipe.score} de {recipe.total} ingredientes</span> : ''}
